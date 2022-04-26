@@ -99,7 +99,7 @@
 						이거만들면서 계속 너 생각했다.<br>
 						별거아니지만 한번쯤은 애기랑 나만의 사이트 만들어보고 싶었다능<br>
 						이쁘게 봐줘여 미니공주
-					</p> -->
+					</p>
 					 <p>
 						<a href = "/addForm" class="btn btn-primary my-2">add album</a>
 					</p> 
