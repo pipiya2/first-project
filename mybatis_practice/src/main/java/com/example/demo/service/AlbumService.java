@@ -28,10 +28,11 @@ public class AlbumService {
 	
 	
 	private void deleteFolder(int cardNum,HttpServletRequest request) {
-		ServletContext context = request.getSession().getServletContext();
-		String path = context.getRealPath("");
-		path = path.substring(0, path.length()-7)+"resources\\static\\img\\card"+cardNum;
-		File folder = new File(path);
+		//ServletContext context = request.getSession().getServletContext();
+		//String path = context.getRealPath("");
+		String imageUrl = "C:\\image_repository\\card"+cardNum;
+		//path = path.substring(0, path.length()-7)+"resources\\static\\img\\card"+cardNum;
+		File folder = new File(imageUrl);
 		try {
 		    while(folder.exists()) {
 			File[] folder_list = folder.listFiles(); //파일리스트 얻어오기
@@ -61,27 +62,23 @@ public class AlbumService {
 		String describe = request.getParameter("describe");
 		System.out.println("region : " +region);
 		System.out.println("describe : "+describe);
-		ServletContext context = request.getSession().getServletContext();
+		//ServletContext context = request.getSession().getServletContext();
 		AlbumVo av = new AlbumVo();
 		// 다음카드번호 db에서 받아오기
 		int cardNum = am.getCardNum() + 1;
 		av.setRegion(region);
 		av.setDescribe(describe);
 		av.setCardNum(cardNum);
-		// 현재 경로 가져오기
-		String uploadPath = context.getRealPath(""); // ....webapp/
-		uploadPath = uploadPath.substring(0, uploadPath.length()-7)+"resources\\static\\img\\card"+cardNum; // \src\main\resources\img\+cardNum
-		System.out.println("uploadPath ==> "+uploadPath);
-		
+		String imageUrl = "C:\\image_repository\\card"+cardNum;
 		// 다음카드번호로 폴더생성
-		File folder = new File(uploadPath); // \src\main\resources\img\+cardNum
+		File folder = new File(imageUrl); // 
 		try {
 			folder.mkdir();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		uploadPath += "\\"; // \src\main\resources\img\+cardNum\
-		System.out.println("uploadPath ==> "+uploadPath);
+		imageUrl += "\\"; // \src\main\resources\img\+cardNum\
+		System.out.println("imageUrl ==> "+imageUrl);
 		
 		Iterator<String> iterator = request.getFileNames();
 		while(iterator.hasNext()){
@@ -95,7 +92,7 @@ public class AlbumService {
 			av.setImgName(originFileName);
 			try {
 				// 파일 업로드
-				mFile.transferTo(new File(uploadPath+originFileName));
+				mFile.transferTo(new File(imageUrl+originFileName));
 				am.insertAlbum(av);
 			} catch (Exception e) {
 				e.printStackTrace();

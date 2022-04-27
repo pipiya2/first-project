@@ -4,6 +4,7 @@ package com.example.demo.controller;
 import java.util.ArrayList;
 import java.util.Map;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,12 +32,15 @@ public class Common {
 
 	@GetMapping("/")
 	public String home() {
-		return "index";
+		return "home.html";
 	}
 	
 	@GetMapping("/addForm")
-	public String addForm() {
-		return "addForm";
+	public String addForm(HttpServletRequest request) {
+		ServletContext context = request.getSession().getServletContext();
+		String uploadPath = context.getRealPath("");
+		System.out.println(uploadPath);
+		return "addForm.html";
 	}
 	
 	@ResponseBody
