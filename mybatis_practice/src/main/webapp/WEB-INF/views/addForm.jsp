@@ -99,7 +99,7 @@
 
 		<section class="py-5 container">
 			<div class = "text-center">
-					<h1 class="display-6">Add album</h1>
+					<h1 class="display-6">Add Album</h1>
 			</div>
 			<div class="row py-lg-5">
 				<div class="col-lg-6 col-md-8 mx-auto">
