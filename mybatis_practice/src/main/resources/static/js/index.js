@@ -21,7 +21,7 @@ $(document).ready(function(){
 				let describe = data[i].describe;
 				
 				let html = '<div class="col"><div class="card shadow-sm">';
-	         	html += '<a href = "/second.html?cardNum='+cardNum+'"><img src="C:image_repository\\card'+cardNum+'\\'+imgName+'" class="card-img-top" alt="..."></a>';
+	         	html += '<a href = "/second.html?cardNum='+cardNum+'"><img src="/upload/image_repository/card'+cardNum+'/'+imgName+'" class="card-img-top" alt="..."></a>';
 	         	html += '<div class="card-body">'+
 	              		'<p class="card-text">';
 	            html += region + '<br>';
@@ -31,7 +31,6 @@ $(document).ready(function(){
 	                 '<button type="button" onclick = "deleteAlbum('+cardNum+')" class="btn btn-sm btn-outline-secondary">Del</button>'+
 	                 '</div>'+
 	             	 '</div>';
-	            
 	            html += '</div></div></div>';
 				$("#card_area").append(html);
 			}
