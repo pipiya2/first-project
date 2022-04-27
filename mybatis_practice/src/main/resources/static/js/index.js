@@ -21,7 +21,7 @@ $(document).ready(function(){
 				let describe = data[i].describe;
 				
 				let html = '<div class="col"><div class="card shadow-sm">';
-	         	html += '<a href = "/second.html?cardNum='+cardNum+'"><img src="/upload/image_repository/card'+cardNum+'/'+imgName+'" class="card-img-top" alt="..."></a>';
+	         	html += '<a href = "/second.html?cardNum='+cardNum+'"><img src="/upload/card'+cardNum+'/'+imgName+'" class="card-img-top" alt="..."></a>';
 	         	html += '<div class="card-body">'+
 	              		'<p class="card-text">';
 	            html += region + '<br>';

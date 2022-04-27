@@ -38,8 +38,8 @@ public class Common {
 	@GetMapping("/addForm")
 	public String addForm(HttpServletRequest request) {
 		ServletContext context = request.getSession().getServletContext();
-		String uploadPath = context.getRealPath("");
-		System.out.println(uploadPath);
+		//String uploadPath = context.getRealPath("");
+		//System.out.println(uploadPath);
 		return "addForm.html";
 	}
 	

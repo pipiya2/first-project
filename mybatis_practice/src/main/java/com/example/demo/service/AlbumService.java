@@ -84,8 +84,6 @@ public class AlbumService {
 		while(iterator.hasNext()){
 			String fileName = iterator.next();
 			
-			System.out.println("fileName = " + fileName);
-			
 			MultipartFile mFile = request.getFile(fileName);
 			String originFileName = mFile.getOriginalFilename();
 			System.out.println("originFileName = " + originFileName);
