@@ -32,7 +32,7 @@ public class Common {
 
 	@GetMapping("/")
 	public String home() {
-		return "home.html";
+		return "home";
 	}
 	
 	@GetMapping("/addForm")
@@ -40,7 +40,7 @@ public class Common {
 		ServletContext context = request.getSession().getServletContext();
 		//String uploadPath = context.getRealPath("");
 		//System.out.println(uploadPath);
-		return "addForm.html";
+		return "addForm";
 	}
 	
 	@ResponseBody
