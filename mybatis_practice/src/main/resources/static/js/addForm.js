@@ -51,8 +51,8 @@ function blankCheck(){
 		$("#region").focus();
 		return false;
 	}
-	if(!$("#describe").val()){
-		$("#describe").focus();
+	if(!$("#floatingTextarea").val()){
+		$("#floatingTextarea").focus();
 		return false;
 	}
 	if(!$("#file").val()){
@@ -63,7 +63,7 @@ function blankCheck(){
 	
 	let data = new FormData();
 	data.append("region", $("#region").val());
-	data.append("describe",$("#describe").val());
+	data.append("describe",$("#floatingTextarea").val());
 	data.append("imgName", file.files[0]);
 	return data;
 }

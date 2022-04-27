@@ -111,9 +111,14 @@
 								id="formGroupExampleInput" placeholder="ex) in 강화광성보..">
 						</div>
 						<div class="mb-3">
-							<label for="formGroupExampleInput" class="form-label">describe
+							<label for="floatingTextarea" class = "mb-2">Describe</label>
+							<div class="form-floating">
+								<textarea class="form-control"
+									placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+							</div>
+							<!-- <label for="formGroupExampleInput" class="form-label">describe
 							</label> <input type="text" id="describe" class="form-control"
-								id="formGroupExampleInput" placeholder="ex) 재밌었다..">
+								id="formGroupExampleInput" placeholder="ex) 재밌었다.."> -->
 						</div>
 						<div class="input-group mb-3">
 							<!-- <label class="input-group-text" for="inputGroupFile01">Upload</label> -->
