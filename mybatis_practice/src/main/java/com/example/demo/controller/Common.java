@@ -2,6 +2,7 @@
 package com.example.demo.controller;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Map;
 
 import javax.servlet.ServletContext;
@@ -56,6 +57,21 @@ public class Common {
 	public String deleteAlbum(@RequestParam("cardNum") int cardNum, HttpServletRequest request) {
 		abs.deleteAlbum(cardNum,request);
 		return "success";
+	}
+	
+	@ResponseBody
+	@PostMapping("/getDate")
+	public long getDate() {
+		int year = 2021;
+		int month = 6;
+		int day = 26;
+		Calendar today = Calendar.getInstance();
+		Calendar ca = Calendar.getInstance();
+
+		ca.set(year,month-1,day);
+		long span = today.getTime().getTime() - ca.getTime().getTime();
+		span = span/1000/60/60/24+1;
+		return span;
 	}
 	
 }

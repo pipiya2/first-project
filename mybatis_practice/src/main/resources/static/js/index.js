@@ -2,12 +2,15 @@
  * 
  */
 $(document).ready(function(){
-	let startDate = new Date('06-26-2021');
-	let today = new Date();
-	let days = Math.ceil((today - startDate)/24/60/60/1000);
+	$.ajax({
+		url : "/getDate",
+		type : "post",
+		success : function(date){
+			$("#present").html(date);
+		}
+	})
 	
-	$("#present").html(days);
-	console.log(days)
+	
 	$.ajax({
 		url : "/getAlbumList",
 		type : "post",
@@ -19,7 +22,7 @@ $(document).ready(function(){
 				let imgName = data[i].imgName;
 				let region = data[i].region;
 				let describe = data[i].describe;
-				let html = '<div class="col"><div class="card shadow-sm">';
+				let html = '<div class="col col-6"><div class="card shadow-sm">';
 	         	html += '<a href = "/second.html?cardNum='+cardNum+'"><img src="/upload/card'+cardNum+'/'+imgName+'" class="card-img-top" alt="..."></a>';
 	         	html += '<div class="card-body">'+
 	              		'<p class="card-text">';
